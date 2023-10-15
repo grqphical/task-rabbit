@@ -1,5 +1,9 @@
 # taskrabbit - A simple, multiplatform make system
 
+## Installation
+
+Simply download the latest version from [Releases](https://github.com/grqphical07/task-rabbit/releases)
+
 ## Installation From Source
 
 Clone this repo and ensure you have `rustc` and `cargo` installed. Then run:
@@ -32,7 +36,7 @@ $ task-rabbit build
 ```
 However since we have defined `build` as our default task, we can omit the build argument and Taskrabbit will automatically run it still.
 
-For more info please visit the Wiki
+For more info please visit the [Wiki](https://github.com/grqphical07/task-rabbit/wiki)
 
 ## License
 
