@@ -206,13 +206,6 @@ fn run_task(task_name: String, task_config: &TaskConfig) {
 fn list_tasks(task_config: &TaskConfig) {
     println!("Tasks Available:");
     for task in task_config.tasks.keys() {
-        let platforms = task_config
-            .tasks
-            .get(task)
-            .unwrap()
-            .platforms_supported
-            .clone()
-            .unwrap_or(vec!["all".into()]);
         if std::env::consts::OS == "windows" {
             if *task
                 == task_config
@@ -221,9 +214,9 @@ fn list_tasks(task_config: &TaskConfig) {
                     .clone()
                     .unwrap_or(String::from(""))
             {
-                println!("  {} {:?}", task.cyan().bold(), platforms);
+                println!("  {}", task.cyan().bold());
             } else {
-                println!("  {} {:?}", task, platforms);
+                println!("  {}", task);
             }
         } else if std::env::consts::OS == "linux" {
             if *task
@@ -233,9 +226,9 @@ fn list_tasks(task_config: &TaskConfig) {
                     .clone()
                     .unwrap_or(String::from(""))
             {
-                println!("  {} {:?}", task.cyan().bold(), platforms);
+                println!("  {}", task.cyan().bold());
             } else {
-                println!("  {} {:?}", task, platforms);
+                println!("  {}", task);
             }
         } else if std::env::consts::OS == "macos" {
             if *task
@@ -245,9 +238,9 @@ fn list_tasks(task_config: &TaskConfig) {
                     .clone()
                     .unwrap_or(String::from(""))
             {
-                println!("  {} {:?}", task.cyan().bold(), platforms);
+                println!("  {}", task.cyan().bold());
             } else {
-                println!("  {} {:?}", task, platforms);
+                println!("  {}", task);
             }
         }
     }
